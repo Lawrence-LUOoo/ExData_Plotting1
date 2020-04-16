@@ -15,6 +15,9 @@ sub_data<-subset(dataset, Date %in% c("1/2/2007","2/2/2007"))
 ## Converting Date and Time
 sub_data$Date_Time<-strptime(paste(sub_data$Date,sub_data$Time),format="%d/%m/%Y %H:%M:%S")
 
+## Reassigning sub_data
+sub_data<-subset(sub_data, select = -c(Date,Time))
+
 # 2. Making Plots
 
 ## Plot 3
